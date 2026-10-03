@@ -14,17 +14,22 @@ const rotatingSynonyms = [
   "Greener Tomorrow",
   "Cleaner Legacy",
   "Resilient Habitat",
-  "Eco Conscious Era",
+  "Net-Zero World",
+  "Eco-Conscious Era",
 ];
 
 export default function Hero({ onQuoteClick }: HeroProps) {
   const [synonymIndex, setSynonymIndex] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    let timeoutId: NodeJS.Timeout;
+    const rotate = () => {
       setSynonymIndex((prev) => (prev + 1) % rotatingSynonyms.length);
-    }, 2800);
-    return () => clearInterval(timer);
+      timeoutId = setTimeout(rotate, 3000);
+    };
+
+    timeoutId = setTimeout(rotate, 3000);
+    return () => clearTimeout(timeoutId);
   }, []);
   return (
     <section id="home" className="relative pt-10 sm:pt-16 pb-0 bg-white bg-architect-grid overflow-hidden border-b border-stone-200/80">
@@ -91,15 +96,14 @@ export default function Hero({ onQuoteClick }: HeroProps) {
           {/* Bold Welcoming Headline with Rotating Synonyms */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.25] mb-6">
             Building a{" "}
-            <span className="inline-grid grid-cols-1 grid-rows-1 relative align-baseline translate-y-[0.12em] overflow-hidden px-1 pb-1">
-              <AnimatePresence initial={false}>
+            <span className="inline-block relative overflow-hidden align-baseline translate-y-[0.12em] h-[1.3em] min-w-[260px] sm:min-w-[390px] lg:min-w-[460px] text-center px-1 pb-1">
+              <AnimatePresence initial={false} mode="popLayout">
                 <motion.span
                   key={synonymIndex}
-                  style={{ gridArea: "1 / 1 / 2 / 2" }}
-                  initial={{ y: "100%", opacity: 0, filter: "blur(2px)" }}
-                  animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: "-100%", opacity: 0, filter: "blur(2px)" }}
-                  transition={{ duration: 0.48, ease: [0.16, 1, 0.3, 1] }}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                   className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2 inline-block whitespace-nowrap"
                 >
                   {rotatingSynonyms[synonymIndex % rotatingSynonyms.length]}
