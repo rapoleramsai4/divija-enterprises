@@ -94,23 +94,23 @@ export default function Hero({ onQuoteClick }: HeroProps) {
           </div>
 
           {/* Bold Welcoming Headline with Rotating Synonyms */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.25] mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.2] mb-6">
             Building a{" "}
-            <span className="inline-block relative overflow-hidden align-baseline translate-y-[0.12em] h-[1.3em] min-w-[260px] sm:min-w-[390px] lg:min-w-[460px] text-center px-1 pb-1">
-              <AnimatePresence initial={false} mode="popLayout">
+            <span className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2 inline-block">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.span
                   key={synonymIndex}
-                  initial={{ y: "100%", opacity: 0 }}
-                  animate={{ y: "0%", opacity: 1 }}
-                  exit={{ y: "-100%", opacity: 0 }}
-                  transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2 inline-block whitespace-nowrap"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.28, ease: "easeOut" }}
+                  className="inline-block"
                 >
                   {rotatingSynonyms[synonymIndex % rotatingSynonyms.length]}
                 </motion.span>
               </AnimatePresence>
             </span>
-            , Engineered for Generations
+            Engineered for Generations
           </h1>
 
           {/* Eco-Friendly Quotation Required by User */}
