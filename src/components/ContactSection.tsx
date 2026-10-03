@@ -86,11 +86,19 @@ export default function ContactSection({ initialService }: ContactSectionProps) 
   };
 
   return (
-    <section id="contact" className="py-20 bg-stone-100/70 border-t border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-white bg-grid-plus relative border-t border-stone-200 overflow-hidden">
+      {/* Subtle CAD Drafting Metadata */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="flex justify-between items-center text-[10px] font-mono text-emerald-800/30 uppercase tracking-widest hidden sm:flex select-none">
+          <span>// DISPATCH & ESTIMATION INTERFACE</span>
+          <span>ESTIMATOR ID: DIV-INQ-2026</span>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100/80 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-300/80 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-3 shadow-2xs backdrop-blur-xs">
             <Building className="w-3.5 h-3.5 text-emerald-700" />
             Connect With Us
           </div>

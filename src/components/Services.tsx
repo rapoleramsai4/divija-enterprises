@@ -177,11 +177,19 @@ export default function Services({ onSelectService }: ServicesProps) {
   };
 
   return (
-    <section id="services" className="py-20 bg-stone-50/60 border-t border-b border-stone-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 bg-white bg-grid-plus relative border-t border-b border-stone-200/80 overflow-hidden">
+      {/* CAD Grid Header Metadata */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="flex justify-between items-center text-[10px] font-mono text-emerald-800/30 uppercase tracking-widest hidden sm:flex select-none">
+          <span>// SPECIFICATION INDEX: 09 SECTORS</span>
+          <span>SYSTEM DRAWING: ECO-CAT-2026</span>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100/80 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-300/80 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-3 shadow-2xs backdrop-blur-xs">
             <Leaf className="w-3.5 h-3.5 text-emerald-700" />
             Specialized Capabilities
           </div>
@@ -198,8 +206,13 @@ export default function Services({ onSelectService }: ServicesProps) {
           {servicesData.map((service, index) => (
             <div
               key={service.id}
-              className="group relative flex flex-col justify-between rounded-2xl bg-white p-7 border border-stone-200/90 shadow-xs hover:shadow-xl hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1"
+              className="group relative flex flex-col justify-between rounded-2xl bg-white/95 backdrop-blur-xs p-7 border border-stone-200 shadow-2xs hover:shadow-xl hover:border-emerald-500/70 transition-all duration-300 transform hover:-translate-y-1"
             >
+              {/* Subtle CAD corner accents */}
+              <div className="absolute top-2 right-2 text-[9px] font-mono text-stone-300 group-hover:text-emerald-500 transition-colors select-none">
+                +
+              </div>
+
               {/* Card Header & Icon */}
               <div>
                 <div className="flex items-start justify-between mb-5">
@@ -208,8 +221,8 @@ export default function Services({ onSelectService }: ServicesProps) {
                       {getIcon(service.iconName)}
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-stone-600 bg-stone-100 px-2.5 py-1 rounded-full group-hover:bg-emerald-50 group-hover:text-emerald-800 transition-colors">
-                    0{index + 1}
+                  <span className="text-xs font-mono font-bold text-stone-600 bg-stone-100 px-2.5 py-1 rounded-full group-hover:bg-emerald-50 group-hover:text-emerald-800 transition-colors border border-stone-200/50">
+                    DIV-0{index + 1}
                   </span>
                 </div>
 

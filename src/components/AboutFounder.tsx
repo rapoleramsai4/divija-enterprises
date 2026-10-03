@@ -14,10 +14,19 @@ import {
 
 export default function AboutFounder() {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-white via-stone-50/80 to-white relative overflow-hidden">
-      {/* Subtle background ornamentation */}
-      <div className="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-emerald-100/40 blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 -left-32 w-80 h-80 rounded-full bg-amber-100/30 blur-3xl pointer-events-none -z-10" />
+    <section id="about" className="py-20 bg-white bg-architect-grid relative overflow-hidden border-t border-stone-200/80">
+      {/* Subtle CAD Drafting Marks */}
+      <div className="absolute top-4 left-6 text-emerald-800/25 font-mono text-[10px] hidden sm:flex items-center gap-1 select-none pointer-events-none">
+        <span>+</span>
+        <span>DRAWING SHEET: DIV-FND-01</span>
+      </div>
+      <div className="absolute top-4 right-6 text-emerald-800/25 font-mono text-[10px] hidden sm:flex items-center gap-1 select-none pointer-events-none">
+        <span>SUSTAINABILITY PRINCIPLES // AUDITED</span>
+        <span>+</span>
+      </div>
+
+      {/* Soft Radial Vignette */}
+      <div className="absolute inset-0 bg-radial from-white/95 via-white/80 to-transparent pointer-events-none -z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

@@ -28,7 +28,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fbfdfa] text-stone-900 selection:bg-emerald-200 selection:text-emerald-950">
+    <div className="min-h-screen flex flex-col bg-white bg-architect-grid text-stone-900 selection:bg-emerald-200 selection:text-emerald-950">
       {/* Header */}
       <Header onQuoteClick={handleQuoteClick} />
 
