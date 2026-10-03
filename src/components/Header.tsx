@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone, Mail, Leaf, ArrowRight, ShieldCheck } from "lucide-react";
 
 interface HeaderProps {
@@ -73,19 +74,17 @@ export default function Header({ onQuoteClick }: HeaderProps) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo Placeholder (Required by user: "use a simple div with 'Logo Placeholder' text for now") */}
+          {/* Divija Eco Construction Brand Logo */}
           <Link href="#home" className="flex items-center gap-3 group">
-            <div className="flex items-center justify-center px-3.5 py-2 rounded-lg border-2 border-dashed border-emerald-600 bg-emerald-50 text-emerald-800 text-xs font-semibold tracking-wider uppercase group-hover:bg-emerald-100 transition-colors shadow-xs">
-              <div className="w-2 h-2 rounded-full bg-emerald-600 mr-2 animate-pulse" />
-              <span>Logo Placeholder</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold tracking-tight text-stone-900 group-hover:text-emerald-800 transition-colors">
-                Divija Enterprises
-              </span>
-              <span className="text-[10px] tracking-wider uppercase font-semibold text-emerald-700">
-                Eco Construction & Supplies
-              </span>
+            <div className="relative h-11 sm:h-13 flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Divija Enterprises - Eco-Friendly Constructions"
+                width={220}
+                height={146}
+                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 duration-200"
+                priority
+              />
             </div>
           </Link>
 

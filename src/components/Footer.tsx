@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Leaf,
   ShieldCheck,
@@ -36,15 +37,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
           {/* Brand & Ethos Column */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center px-3 py-1.5 rounded-lg border border-dashed border-emerald-500 bg-emerald-950/60 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse" />
-                Logo Placeholder
-              </div>
-              <span className="text-xl font-extrabold text-white tracking-tight">
-                Divija Enterprises
-              </span>
-            </div>
+            <Link
+              href="#home"
+              className="inline-block p-2 bg-white rounded-xl shadow-md border border-stone-800 hover:border-emerald-500 transition-colors group"
+            >
+              <Image
+                src="/logo.png"
+                alt="Divija Enterprises - Eco-Friendly Constructions"
+                width={200}
+                height={133}
+                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-102"
+              />
+            </Link>
 
             <p className="text-sm text-stone-400 leading-relaxed">
               Sustainable civil engineering, renewable infrastructure solutions, eco-building supplies, and heavy machinery logistics. Delivering green landmarks built for future generations.
