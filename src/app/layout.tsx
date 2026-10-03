@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     "Machinery procurement",
   ],
   authors: [{ name: "M. Sudharshan" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({

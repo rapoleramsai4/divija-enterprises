@@ -14,8 +14,8 @@ const rotatingSynonyms = [
   "Greener Tomorrow",
   "Cleaner Legacy",
   "Resilient Habitat",
-  "Net-Zero World",
-  "Eco-Conscious Era",
+  "Net Zero World",
+  "Eco Conscious Era",
 ];
 
 export default function Hero({ onQuoteClick }: HeroProps) {
