@@ -209,14 +209,6 @@ export default function ContactSection({ initialService }: ContactSectionProps) 
                 </div>
               </div>
             </div>
-
-            {/* Quick Assurance Box */}
-            <div className="p-5 rounded-2xl bg-emerald-900 text-white flex items-center gap-3 shadow-sm border border-emerald-800">
-              <Sparkles className="w-6 h-6 text-emerald-300 shrink-0" />
-              <p className="text-xs text-emerald-100 leading-relaxed">
-                Direct oversight on every quote by <strong>M. Sudharshan</strong> and our senior civil engineering estimators. Fast turnarounds guaranteed.
-              </p>
-            </div>
           </div>
 
           {/* Contact Form UI Wrapped in TanStack Query */}

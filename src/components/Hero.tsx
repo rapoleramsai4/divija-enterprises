@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Leaf, Shield, CheckCircle2, PhoneCall, Sparkles, Compass } from "lucide-react";
 import LorryAnimation from "./LorryAnimation";
 
@@ -8,7 +9,23 @@ interface HeroProps {
   onQuoteClick?: () => void;
 }
 
+const rotatingSynonyms = [
+  "Sustainable Future",
+  "Greener Tomorrow",
+  "Cleaner Legacy",
+  "Resilient Habitat",
+  "Eco Conscious Era",
+];
+
 export default function Hero({ onQuoteClick }: HeroProps) {
+  const [synonymIndex, setSynonymIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSynonymIndex((prev) => (prev + 1) % rotatingSynonyms.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section id="home" className="relative pt-10 sm:pt-16 pb-0 bg-white bg-architect-grid overflow-hidden border-b border-stone-200/80">
       {/* Subtle Architectural Drafting Corner Crosshairs */}
@@ -71,9 +88,24 @@ export default function Hero({ onQuoteClick }: HeroProps) {
             </span>
           </div>
 
-          {/* Bold Welcoming Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.15] mb-6">
-            Building a <span className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2">Sustainable Future</span>, Engineered for Generations
+          {/* Bold Welcoming Headline with Rotating Synonyms */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.2] mb-6">
+            Building a{" "}
+            <span className="inline-block relative overflow-hidden align-baseline">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingSynonyms[synonymIndex]}
+                  initial={{ y: 28, opacity: 0, filter: "blur(3px)" }}
+                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                  exit={{ y: -28, opacity: 0, filter: "blur(3px)" }}
+                  transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2 inline-block px-1"
+                >
+                  {rotatingSynonyms[synonymIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            , Engineered for Generations
           </h1>
 
           {/* Eco-Friendly Quotation Required by User */}
