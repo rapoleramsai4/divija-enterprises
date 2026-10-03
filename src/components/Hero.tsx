@@ -89,19 +89,20 @@ export default function Hero({ onQuoteClick }: HeroProps) {
           </div>
 
           {/* Bold Welcoming Headline with Rotating Synonyms */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.2] mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-stone-900 leading-[1.25] mb-6">
             Building a{" "}
-            <span className="inline-block relative overflow-hidden align-baseline">
-              <AnimatePresence mode="wait">
+            <span className="inline-grid grid-cols-1 grid-rows-1 relative align-baseline translate-y-[0.12em] overflow-hidden px-1 pb-1">
+              <AnimatePresence initial={false}>
                 <motion.span
-                  key={rotatingSynonyms[synonymIndex]}
-                  initial={{ y: 28, opacity: 0, filter: "blur(3px)" }}
-                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: -28, opacity: 0, filter: "blur(3px)" }}
-                  transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2 inline-block px-1"
+                  key={synonymIndex}
+                  style={{ gridArea: "1 / 1 / 2 / 2" }}
+                  initial={{ y: "100%", opacity: 0, filter: "blur(2px)" }}
+                  animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+                  exit={{ y: "-100%", opacity: 0, filter: "blur(2px)" }}
+                  transition={{ duration: 0.48, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-emerald-700 underline decoration-emerald-400 decoration-wavy decoration-2 inline-block whitespace-nowrap"
                 >
-                  {rotatingSynonyms[synonymIndex]}
+                  {rotatingSynonyms[synonymIndex % rotatingSynonyms.length]}
                 </motion.span>
               </AnimatePresence>
             </span>
