@@ -16,52 +16,49 @@ export default function AboutFounder() {
   return (
     <section id="about" className="py-20 bg-white bg-architect-grid relative overflow-hidden border-t border-stone-200/80">
       {/* Subtle CAD Drafting Marks */}
-      <div className="absolute top-4 left-6 text-emerald-800/25 font-mono text-[10px] hidden sm:flex items-center gap-1 select-none pointer-events-none">
+      <div className="absolute top-4 left-6 text-emerald-800/30 font-mono text-[10px] hidden sm:flex items-center gap-1 select-none pointer-events-none z-0">
         <span>+</span>
         <span>DRAWING SHEET: DIV-FND-01</span>
       </div>
-      <div className="absolute top-4 right-6 text-emerald-800/25 font-mono text-[10px] hidden sm:flex items-center gap-1 select-none pointer-events-none">
+      <div className="absolute top-4 right-6 text-emerald-800/30 font-mono text-[10px] hidden sm:flex items-center gap-1 select-none pointer-events-none z-0">
         <span>SUSTAINABILITY PRINCIPLES // AUDITED</span>
         <span>+</span>
       </div>
 
-      {/* Soft Radial Vignette */}
-      <div className="absolute inset-0 bg-radial from-white/95 via-white/80 to-transparent pointer-events-none -z-0" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Company Background & Founder Quote */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-stone-100 border border-stone-300/80 text-stone-800 text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-100 border border-stone-300 text-stone-900 text-xs font-bold uppercase tracking-wider shadow-2xs">
               <TreePine className="w-3.5 h-3.5 text-emerald-700" />
               Leadership & Ethos
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-950 tracking-tight leading-[1.15]">
               Pioneering Sustainable Infrastructure with Purpose & Integrity
             </h2>
 
             {/* Crucial requirement: Mention the owner */}
-            <div className="p-4 rounded-xl bg-emerald-50/80 border-l-4 border-emerald-600 text-emerald-950 font-medium text-base sm:text-lg flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-emerald-700 text-white shrink-0">
+            <div className="p-4 rounded-xl bg-emerald-50 border-l-4 border-emerald-600 shadow-xs flex items-center gap-3.5">
+              <div className="p-2.5 rounded-lg bg-emerald-700 text-white shrink-0 shadow-2xs">
                 <HardHat className="w-5 h-5" />
               </div>
               <div>
                 <span className="block text-xs uppercase tracking-wider text-emerald-800 font-bold">
                   Visionary Leadership
                 </span>
-                <span className="text-stone-900 font-bold">
+                <span className="text-stone-950 font-extrabold text-base sm:text-lg">
                   Founded and led by M. Sudharshan
                 </span>
               </div>
             </div>
 
-            <p className="text-stone-600 text-base sm:text-lg leading-relaxed">
+            <p className="text-stone-800 text-base sm:text-lg leading-relaxed font-normal">
               Divija Enterprises was established with a clear mandate: to transform conventional construction methodologies into ecologically sustainable realities. We believe that modern civil infrastructure, roads, and commercial developments can thrive without compromising delicate natural ecosystems.
             </p>
 
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-              Under the proactive stewardship of <strong>M. Sudharshan</strong>, Divija Enterprises has unified heavy civil execution, clean energy electrification, precision road building, and verified low-carbon supply logistics under one reliable banner.
+            <p className="text-stone-800 text-sm sm:text-base leading-relaxed font-normal">
+              Under the proactive stewardship of <strong className="text-stone-950 font-bold">M. Sudharshan</strong>, Divija Enterprises has unified heavy civil execution, clean energy electrification, precision road building, and verified low-carbon supply logistics under one reliable banner.
             </p>
 
             {/* Crucial requirement: Second Eco-Friendly Quote */}

@@ -59,9 +59,6 @@ export default function Hero({ onQuoteClick }: HeroProps) {
         </svg>
       </div>
 
-      {/* Soft Radial Center Vignette to harmonize typography over the grid */}
-      <div className="absolute inset-0 bg-radial from-white/95 via-white/85 to-transparent pointer-events-none -z-0" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Eco Badge with drafting bracket marks */}
